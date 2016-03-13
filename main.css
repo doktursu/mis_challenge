@@ -4,12 +4,17 @@
     float: left;
     background-color: red;
     margin-left: 0px;
+    position: relative;
 }
 
 #menu-icon {
     width: 32px;
     height: 32px;
+    margin: 6px;
     background-image: url('images/1457921783_menu.svg');
+    position: absolute;
+    top: 0;
+    right: -48px;
 }
 
 #main-content {
