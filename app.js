@@ -7,6 +7,9 @@ window.onload = function() {
     var popup = new Popup();
 
     menu.onOptionClick = function(key) {
+        var inputEl = document.querySelector('#name-input');
+        var name = inputEl.value;
+        console.log('name is', name);
         console.log('clicked option:', key)
     };
 
