@@ -6,6 +6,12 @@
     margin-left: 0px;
 }
 
+#menu-icon {
+    width: 32px;
+    height: 32px;
+    background-image: url('images/1457921783_menu.svg');
+}
+
 #main-content {
     width: 100%;
     height: 100vh;
