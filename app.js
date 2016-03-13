@@ -4,6 +4,7 @@ window.onload = function() {
     console.log('app started');
 
     var menu = new Menu();
+    var popup = new Popup();
 
     menu.onOptionClick = function(key) {
         console.log('clicked option:', key)
