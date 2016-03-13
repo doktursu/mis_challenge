@@ -1,4 +1,11 @@
 var Popup = function() {
     this.popupEl = document.querySelector('#popup');
-    console.log('popupEl', this.popupEl);
-}
+};
+
+Popup.prototype = {
+
+    display: function(message) {
+        this.popupEl.innerText = message;
+    }
+
+};
