@@ -15,6 +15,7 @@
     position: absolute;
     top: 0;
     right: -48px;
+    visibility: hidden;
 }
 
 #main-content {
@@ -27,6 +28,10 @@
 @media (max-width: 768px) {
     #menu {
         margin-left: -300px;
+    }
+
+    #menu-icon {
+        visibility: visible;
     }
 
     #main-content {
