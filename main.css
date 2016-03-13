@@ -5,6 +5,7 @@
     background-color: red;
     margin-left: 0px;
     position: relative;
+    transition: margin-left 0.18s ease-out;
 }
 
 #menu-icon {
@@ -23,6 +24,7 @@
     height: 100vh;
     margin-left: 300px;
     background-color: blue;
+    transition: margin-left 0.18s ease-out;
 }
 
 @media (max-width: 768px) {
