@@ -3,6 +3,7 @@
     height: 100vh;
     float: left;
     background-color: red;
+    margin-left: 0px;
 }
 
 #main-content {
@@ -10,4 +11,14 @@
     height: 100vh;
     margin-left: 300px;
     background-color: blue;
+}
+
+@media (max-width: 768px) {
+    #menu {
+        margin-left: -300px;
+    }
+
+    #main-content {
+        margin-left: 0;
+    }
 }
