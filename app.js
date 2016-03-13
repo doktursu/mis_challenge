@@ -9,9 +9,12 @@ window.onload = function() {
     menu.onOptionClick = function(key) {
         var inputEl = document.querySelector('#name-input');
         var name = inputEl.value;
-        popup.display(name);
-        console.log('name is', name);
-        console.log('clicked option:', key)
+        var message = "Please enter a name first";
+        if (name) {
+            message = "Hello " + name;
+        }
+        popup.display(message);
+
     };
 
     window.onresize = function() {
