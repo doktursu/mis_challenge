@@ -4,6 +4,8 @@ var Menu = function() {
     this.iconEl = document.querySelector('#menu-icon');
     this.iconEl.onclick = this.toggle.bind(this);
 
+    this.menuOptions = document.querySelector('#menu-options');
+
     this.isDisplaying = window.innerWidth >= 768;
     this.isDefaultDisplaying = window.innerWidth >= 768;
 
