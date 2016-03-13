@@ -6,6 +6,7 @@
     margin-left: 0px;
     position: relative;
     transition: margin-left 0.18s ease-out;
+    z-index: 1;
 }
 
 #menu-icon {
@@ -25,6 +26,7 @@
     margin-left: 300px;
     background-color: blue;
     transition: margin-left 0.18s ease-out;
+    position: relative;
 }
 
 @media (max-width: 768px) {
@@ -39,4 +41,19 @@
     #main-content {
         margin-left: 0;
     }
+}
+
+.say-hello {
+    width: 250px;
+    height: 150px;
+    background-color: white;
+}
+
+.centered {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
