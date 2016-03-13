@@ -5,6 +5,9 @@ var Menu = function() {
     this.iconEl.onclick = this.toggle.bind(this);
 
     this.menuOptions = document.querySelector('#menu-options');
+    this.menuOptions.onclick = function(e) {
+        console.log('e.target', e.target.dataset.menuOptionKey);
+    };
 
     this.isDisplaying = window.innerWidth >= 768;
     this.isDefaultDisplaying = window.innerWidth >= 768;
