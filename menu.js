@@ -6,8 +6,10 @@ var Menu = function() {
 
     this.menuOptions = document.querySelector('#menu-options');
     this.menuOptions.onclick = function(e) {
-        console.log('e.target', e.target.dataset.menuOptionKey);
-    };
+        var key = e.target.dataset.menuOptionKey;
+        this.onOptionClick(key);
+    }.bind(this);
+    this.onOptionClick = null;
 
     this.isDisplaying = window.innerWidth >= 768;
     this.isDefaultDisplaying = window.innerWidth >= 768;
