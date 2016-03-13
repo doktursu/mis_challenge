@@ -3,9 +3,12 @@
     height: 100vh;
     float: left;
     background-color: red;
-    margin-left: 0px;
-    position: relative;
-    transition: margin-left 0.18s ease-out;
+    /*margin-left: 0px;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transition: left 0.18s ease-out;
     z-index: 1;
 }
 
@@ -30,9 +33,9 @@
 }
 
 @media (max-width: 768px) {
-    #menu {
-        margin-left: -300px;
-    }
+/*    #menu {
+        left: -300px;
+    }*/
 
     #menu-icon {
         visibility: visible;
