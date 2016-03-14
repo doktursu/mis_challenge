@@ -30,7 +30,8 @@
 }
 
 .opened #menu-icon {
-    background-image: url('images/1457837943_cross.svg');
+    background-image: url('images/1457837943_cross_32_white.svg');
+    fill: white;
 }
 
 #menu.closed {
@@ -95,12 +96,12 @@
 }
 
 #popup-close {
-    width: 25px;
-    height: 25px;
+    width: 24px;
+    height: 24px;
     position: absolute;
     top: 0;
     right: 0;
-    background-image: url('images/1457924590_ic_close_48px.svg');
+    background-image: url('images/1457837943_cross_24_black.svg');
 }
 
 .popup-display {
