@@ -9,7 +9,7 @@ window.onload = function() {
     var popup = new Popup(popupOverlay);
 
     menuOverlay.onOverlayClick = function() {
-        menu.close();
+        menu.hide();
     };
 
     popupOverlay.onOverlayClick = function() {
@@ -48,10 +48,10 @@ window.onload = function() {
     window.onresize = function() {
         if (this.innerWidth > 768) {
             menu.setDefaultOpen();
-            menu.open();
+            menu.display();
         } else if (menu.isDefaultDisplaying) {
             menu.setDefaultClosed();
-            menu.close();
+            menu.hide();
         }
     };
 

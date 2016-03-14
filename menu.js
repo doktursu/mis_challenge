@@ -9,7 +9,7 @@ var Menu = function(overlay) {
     this.menuOptions = document.querySelector('#menu-options');
     this.menuOptions.onclick = function(e) {
         if (!this.isDefaultDisplaying) {
-            this.close();
+            this.hide();
         }
         var key = e.target.dataset.menuOptionKey;
         this.onOptionClick(key);
@@ -28,13 +28,13 @@ Menu.prototype = {
 
     toggle: function() {
         if (this.isDisplaying) {
-            this.close();
+            this.hide();
         } else {
-            this.open();
+            this.display();
         }
     },
 
-    open: function() {
+    display: function() {
         this.menuEl.className = 'opened';
         if (this.isDefaultDisplaying) {
             this.overlay.hide();
@@ -44,7 +44,7 @@ Menu.prototype = {
         this.isDisplaying = true;
     },
 
-    close: function() {
+    hide: function() {
         this.menuEl.className = 'closed';
         this.overlay.hide();
         this.isDisplaying = false;
