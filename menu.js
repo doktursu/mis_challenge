@@ -15,6 +15,8 @@ var Menu = function() {
     this.isDefaultDisplaying = window.innerWidth >= 768;
 
     this.menuEl.className = (this.isDisplaying ? 'opened' : 'closed');
+
+    this.overlay = document.querySelector('#overlay');
 };
 
 Menu.prototype = {
@@ -29,11 +31,15 @@ Menu.prototype = {
 
     open: function() {
         this.menuEl.className = 'opened';
+        if (!this.isDefaultDisplaying) {
+            this.overlay.style.display = 'block';
+        }
         this.isDisplaying = true;
     },
 
     close: function() {
         this.menuEl.className = 'closed';
+        this.overlay.style.display = 'none';
         this.isDisplaying = false;
     },
 
