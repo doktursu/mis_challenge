@@ -3,6 +3,8 @@ var Popup = function() {
     this.textEl = this.popupEl.querySelector('p');
     this.closeEl = document.querySelector('#popup-close');
     this.closeEl.onclick = this.hide.bind(this);
+
+    this.overlay = document.querySelector('#overlay');
 };
 
 Popup.prototype = {

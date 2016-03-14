@@ -1,4 +1,4 @@
-var Menu = function() {
+var Menu = function(overlay) {
     this.menuEl = document.querySelector('#menu');
 
     this.iconEl = document.querySelector('#menu-icon');
@@ -16,7 +16,7 @@ var Menu = function() {
 
     this.menuEl.className = (this.isDisplaying ? 'opened' : 'closed');
 
-    this.overlay = document.querySelector('#overlay');
+    this.overlay = overlay;
 };
 
 Menu.prototype = {
@@ -31,15 +31,17 @@ Menu.prototype = {
 
     open: function() {
         this.menuEl.className = 'opened';
-        if (!this.isDefaultDisplaying) {
-            this.overlay.style.display = 'block';
+        if (this.isDefaultDisplaying) {
+            this.overlay.hide();
+        } else {
+            this.overlay.display();
         }
         this.isDisplaying = true;
     },
 
     close: function() {
         this.menuEl.className = 'closed';
-        this.overlay.style.display = 'none';
+        this.overlay.hide();
         this.isDisplaying = false;
     },
 

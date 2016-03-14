@@ -3,7 +3,8 @@
 window.onload = function() {
     console.log('app started');
 
-    var menu = new Menu();
+    var overlay = new Overlay();
+    var menu = new Menu(overlay);
     var popup = new Popup();
 
     menu.onOptionClick = function(key) {
