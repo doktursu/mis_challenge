@@ -7,6 +7,12 @@ window.onload = function() {
     var menu = new Menu(overlay);
     var popup = new Popup(overlay);
 
+    overlay.onOverlayClick = function() {
+        console.log('clicked overlay')
+        menu.close();
+        popup.hide();
+    };
+
     menu.onOptionClick = function(key) {
         var inputEl = document.querySelector('#name-input');
         var name = inputEl.value;

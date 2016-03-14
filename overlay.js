@@ -1,5 +1,8 @@
 var Overlay = function() {
     this.overlayEl = document.querySelector('#overlay');
+    this.overlayEl.onclick = function() {
+        this.onOverlayClick();
+    }.bind(this);
 };
 
 Overlay.prototype = {
