@@ -35,7 +35,7 @@ html {
     width: 32px;
     height: 32px;
     margin: 6px;
-    background-image: url('images/1457921783_menu.svg');
+    background-image: url('../images/1457921783_menu.svg');
     position: absolute;
     top: 0;
     right: -48px;
@@ -44,11 +44,11 @@ html {
 }
 
 .opened #menu-icon {
-    background-image: url('images/1457837943_cross_32_white.svg');
+    background-image: url('../images/1457837943_cross_32_white.svg');
 }
 
 .closed #menu-icon {
-    background-image: url('images/1457921783_menu.svg');
+    background-image: url('../images/1457921783_menu.svg');
 }
 
 @media (max-width: 768px) {
@@ -155,7 +155,7 @@ html {
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
-    background-image: url('images/1457837943_cross_24_black.svg');
+    background-image: url('../images/1457837943_cross_24_black.svg');
     cursor: pointer;
 }
 
