@@ -8,6 +8,9 @@ var Menu = function(overlay) {
 
     this.menuOptions = document.querySelector('#menu-options');
     this.menuOptions.onclick = function(e) {
+        if (!this.isDefaultDisplaying) {
+            this.close();
+        }
         var key = e.target.dataset.menuOptionKey;
         this.onOptionClick(key);
     }.bind(this);

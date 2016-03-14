@@ -1,5 +1,5 @@
-var Overlay = function() {
-    this.overlayEl = document.querySelector('#overlay');
+var Overlay = function(element) {
+    this.overlayEl = element;
     this.overlayEl.onclick = function() {
         this.onOverlayClick();
     }.bind(this);

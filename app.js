@@ -3,14 +3,18 @@
 window.onload = function() {
     console.log('app started');
 
-    var overlay = new Overlay();
-    var menu = new Menu(overlay);
-    var popup = new Popup(overlay);
+    var menuOverlay = new Overlay(document.querySelector('#menu-overlay'));
+    var menu = new Menu(menuOverlay);
+    var popupOverlay = new Overlay(document.querySelector('#popup-overlay'));
+    var popup = new Popup(popupOverlay);
 
-    overlay.onOverlayClick = function() {
+    menuOverlay.onOverlayClick = function() {
         menu.close();
-        popup.hide();
     };
+
+    popupOverlay.onOverlayClick = function() {
+        popup.hide();
+    }
 
     menu.onOptionClick = function(key) {
         var inputEl = document.querySelector('#name-input');
@@ -36,6 +40,7 @@ window.onload = function() {
             }
             message = greeting + name;
         }
+
         popup.display(message);
 
     };
@@ -45,8 +50,8 @@ window.onload = function() {
             menu.setDefaultOpen();
             menu.open();
         } else if (menu.isDefaultDisplaying) {
-            menu.close();
             menu.setDefaultClosed();
+            menu.close();
         }
     };
 
