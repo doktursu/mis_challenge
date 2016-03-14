@@ -14,6 +14,7 @@ var Menu = function(overlay) {
         var key = e.target.dataset.menuOptionKey;
         this.onOptionClick(key);
     }.bind(this);
+    
     this.onOptionClick = null;
 
     this.isDisplaying = window.innerWidth >= 768;
@@ -36,18 +37,18 @@ Menu.prototype = {
 
     display: function() {
         this.menuEl.className = 'opened';
+        this.isDisplaying = true;
         if (this.isDefaultDisplaying) {
             this.overlay.hide();
         } else {
             this.overlay.display();
         }
-        this.isDisplaying = true;
     },
 
     hide: function() {
         this.menuEl.className = 'closed';
-        this.overlay.hide();
         this.isDisplaying = false;
+        this.overlay.hide();
     },
 
     setDefaultOpen: function() {

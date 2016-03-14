@@ -8,11 +8,11 @@ var Overlay = function(element) {
 Overlay.prototype = {
 
     display: function() {
-        this.overlayEl.style.display = 'block';
+        this.overlayEl.className = 'overlay-display';
     },
 
     hide: function() {
-        this.overlayEl.style.display = 'none';
+        this.overlayEl.className = 'overlay-hidden';
     }
 
 }

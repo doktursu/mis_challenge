@@ -1,6 +1,6 @@
 var Popup = function(overlay) {
     this.popupEl = document.querySelector('#popup');
-    this.textEl = this.popupEl.querySelector('p');
+    this.textEl = document.querySelector('#popup-message');
     this.closeEl = document.querySelector('#popup-close');
     this.closeEl.onclick = function() {
         this.hide();

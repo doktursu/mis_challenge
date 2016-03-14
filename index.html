@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" type="text/css" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="main.css">
+
     <script type="text/javascript" src="overlay.js"></script>
     <script type="text/javascript" src="menu.js"></script>
     <script type="text/javascript" src="popup.js"></script>
@@ -28,24 +29,25 @@
         </ul>
     </div>
 
-    <div id="main-content">
+    <main id="main-content">
         <div class="say-hello centered">
-            <label for="name">Enter a name</label>
+            <label for="name">Enter your name</label>
             <br />
-            <input name="name" id="name-input" type="text" />
+            <input id="name-input" type="text" autofocus />
         </div>
+    </main>
+
+    <div id="menu-overlay" class="overlay-hidden">
     </div>
 
-    <div id="menu-overlay" class="overlay">
-    </div>
-
-    <div id="popup-overlay" class="overlay">
+    <div id="popup-overlay" class="overlay-hidden">
     </div>
 
     <div id="popup" class="popup-hidden">
         <div id="popup-close">
         </div>
-        <p></p>
+        <p id="popup-message">
+        </p>
     </div>
 </body>
 </html>

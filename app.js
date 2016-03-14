@@ -1,7 +1,4 @@
-
-
 window.onload = function() {
-    console.log('app started');
 
     var menuOverlay = new Overlay(document.querySelector('#menu-overlay'));
     var menu = new Menu(menuOverlay);
