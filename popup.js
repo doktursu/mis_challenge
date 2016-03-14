@@ -1,10 +1,10 @@
-var Popup = function() {
+var Popup = function(overlay) {
     this.popupEl = document.querySelector('#popup');
     this.textEl = this.popupEl.querySelector('p');
     this.closeEl = document.querySelector('#popup-close');
     this.closeEl.onclick = this.hide.bind(this);
 
-    this.overlay = document.querySelector('#overlay');
+    this.overlay = overlay;
 };
 
 Popup.prototype = {
@@ -12,10 +12,12 @@ Popup.prototype = {
     display: function(message) {
         this.textEl.innerText = message;
         this.popupEl.className = 'popup-display';
+        this.overlay.display();
     },
 
     hide: function() {
         this.popupEl.className = 'popup-hidden';
+        this.overlay.hide();
     }
 
 };

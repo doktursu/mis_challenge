@@ -5,7 +5,7 @@ window.onload = function() {
 
     var overlay = new Overlay();
     var menu = new Menu(overlay);
-    var popup = new Popup();
+    var popup = new Popup(overlay);
 
     menu.onOptionClick = function(key) {
         var inputEl = document.querySelector('#name-input');
