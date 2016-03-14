@@ -78,6 +78,30 @@
     background-color: white;
 }
 
+/* Popup
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+#popup {
+    width: 250px;
+    height: 150px;
+    background-color: white;
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.popup-display {
+    display: block;
+}
+
+.popup-hidden {
+    display: none;
+}
+
 /* Utils
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
