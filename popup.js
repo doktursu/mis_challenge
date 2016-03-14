@@ -1,6 +1,8 @@
 var Popup = function() {
     this.popupEl = document.querySelector('#popup');
     this.textEl = this.popupEl.querySelector('p');
+    this.closeEl = document.querySelector('#popup-close');
+    this.closeEl.onclick = this.hide.bind(this);
 };
 
 Popup.prototype = {
