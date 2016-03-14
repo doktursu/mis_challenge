@@ -8,6 +8,10 @@ Popup.prototype = {
         this.popupEl.innerText = message;
         this.popupEl.className = 'popup-display';
         console.log(this.popupEl.style.className);
+    },
+
+    hide: function() {
+        this.popupEl.className = 'popup-hidden';
     }
 
 };
