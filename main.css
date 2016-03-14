@@ -94,6 +94,15 @@
     margin: auto;
 }
 
+#popup-close {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url('images/1457924590_ic_close_48px.svg');
+}
+
 .popup-display {
     display: block;
 }

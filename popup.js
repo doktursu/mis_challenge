@@ -1,13 +1,13 @@
 var Popup = function() {
     this.popupEl = document.querySelector('#popup');
+    this.textEl = this.popupEl.querySelector('p');
 };
 
 Popup.prototype = {
 
     display: function(message) {
-        this.popupEl.innerText = message;
+        this.textEl.innerText = message;
         this.popupEl.className = 'popup-display';
-        console.log(this.popupEl.style.className);
     },
 
     hide: function() {
