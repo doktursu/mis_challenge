@@ -8,7 +8,6 @@ window.onload = function() {
     var popup = new Popup(overlay);
 
     overlay.onOverlayClick = function() {
-        console.log('clicked overlay')
         menu.close();
         popup.hide();
     };

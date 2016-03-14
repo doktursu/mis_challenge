@@ -2,7 +2,9 @@ var Menu = function(overlay) {
     this.menuEl = document.querySelector('#menu');
 
     this.iconEl = document.querySelector('#menu-icon');
-    this.iconEl.onclick = this.toggle.bind(this);
+    this.iconEl.onclick = function() {
+        this.toggle();
+    }.bind(this);
 
     this.menuOptions = document.querySelector('#menu-options');
     this.menuOptions.onclick = function(e) {

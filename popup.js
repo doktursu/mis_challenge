@@ -2,7 +2,9 @@ var Popup = function(overlay) {
     this.popupEl = document.querySelector('#popup');
     this.textEl = this.popupEl.querySelector('p');
     this.closeEl = document.querySelector('#popup-close');
-    this.closeEl.onclick = this.hide.bind(this);
+    this.closeEl.onclick = function() {
+        this.hide();
+    }.bind(this);
 
     this.overlay = overlay;
 };
