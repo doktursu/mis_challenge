@@ -1,6 +1,6 @@
 'use strict';
 
-window.onload = function() {
+window.onload = () => {
 
     let menuOverlay = new Overlay(document.querySelector('#menu-overlay'));
     let menu = new Menu(menuOverlay);
@@ -15,7 +15,7 @@ window.onload = function() {
         let inputEl = document.querySelector('#name-input');
         let name = inputEl.value;
         let message = "Please enter a name first";
-        
+
         if (name) {
             switch (key) {
                 case 'say-hello':
