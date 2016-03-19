@@ -6,10 +6,10 @@ import Popup from './popup.es6.js';
 
 window.onload = () => {
 
-    let menuOverlay = new Overlay(document.querySelector('#menu-overlay'));
-    let menu = new Menu(menuOverlay);
-    let popupOverlay = new Overlay(document.querySelector('#popup-overlay'));
-    let popup = new Popup(popupOverlay);
+    const menuOverlay = new Overlay(document.querySelector('#menu-overlay'));
+    const menu = new Menu(menuOverlay);
+    const popupOverlay = new Overlay(document.querySelector('#popup-overlay'));
+    const popup = new Popup(popupOverlay);
 
     menuOverlay.onOverlayClick = () => menu.hide();
 
