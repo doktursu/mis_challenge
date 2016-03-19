@@ -1,5 +1,9 @@
 'use strict';
 
+import Overlay from './overlay.es6.js';
+import Menu from './menu.es6.js';
+import Popup from './popup.es6.js';
+
 window.onload = () => {
 
     let menuOverlay = new Overlay(document.querySelector('#menu-overlay'));
