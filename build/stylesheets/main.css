@@ -65,19 +65,25 @@ html {
 /* Menu Options
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-#menu-options {
+#menu ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
-#menu-options li {
+#menu ul li,
+#menu header {
     padding: 1rem 1.6rem;
 }
 
-#menu-options li:hover {
+#menu ul li:hover {
     cursor: pointer;
     background-color: #97AF00;
+}
+
+#menu header {
+    color: #DCFB19;
+    border-bottom: 1px solid #DCFB19;
 }
 
 
@@ -103,14 +109,15 @@ html {
 /* Name Input
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-.say-hello {
-    width: 280px;
+.name-input {
+    width: 300px;
     height: 150px;
     font-size: 1.2rem;
     color: #54632c;
 }
 
-.say-hello input[type=text] {
+.name-input input[type=text] {
+    box-sizing: border-box;
     font-size: 2rem;
     width: 100%;
     outline: none;
@@ -118,6 +125,13 @@ html {
     border: 1px solid rgba(97,116,63, 0.2);
     margin-top: 0.4rem;
     color: #303a1f;
+}
+
+.name-input p {
+    padding: 0;
+    color: #A3AF83;
+    text-align: right;
+    margin-top: 0.4rem;
 }
 
 

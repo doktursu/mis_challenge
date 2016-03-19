@@ -102,7 +102,7 @@
 	    };
 	
 	    window.onresize = function () {
-	        if (undefined.innerWidth > 768) {
+	        if (window.innerWidth > 768) {
 	            menu.setDefaultOpen();
 	            menu.display();
 	        } else if (menu.isDefaultDisplaying) {
