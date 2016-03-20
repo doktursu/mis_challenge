@@ -188,6 +188,10 @@ html {
     transition: background-color 0.15s ease-out;
 }
 
+pop-up .overlay {
+    z-index: 2;
+}
+
 .overlay {
     position: fixed;
     top: 0;

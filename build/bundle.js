@@ -65,15 +65,15 @@
 	    document.registerElement('pop-up', _popupEs2.default);
 	    document.registerElement('over-lay', _overlayEs2.default);
 	
-	    // const menuOverlay = new Overlay(document.querySelector('#menu-overlay'));
-	    var menu = new _menuEs2.default();
-	    // const popupOverlay = new Overlay(document.querySelector('#popup-overlay'));
+	    var menuOverlay = document.querySelector('#menu-overlay');
+	    var menu = new _menuEs2.default(menuOverlay);
+	
 	    var popup = document.querySelector('pop-up');
-	    console.log('popup', popup);
 	
-	    // menuOverlay.onOverlayClick = () => menu.hide();
-	
-	    // popupOverlay.onOverlayClick = () => popup.hide();
+	    menuOverlay.onOverlayClick = function () {
+	        console.log('menu overlay clicked');
+	        menu.hide();
+	    };
 	
 	    menu.onOptionClick = function (key) {
 	        var inputEl = document.querySelector('#name-input');
@@ -142,7 +142,12 @@
 	    _createClass(Overlay, [{
 	        key: 'createdCallback',
 	        value: function createdCallback() {
-	            this.className = 'overlay overlay-display';
+	            var _this2 = this;
+	
+	            this.className = 'overlay overlay-hidden';
+	            this.onclick = function () {
+	                return _this2.onOverlayClick();
+	            };
 	        }
 	    }, {
 	        key: 'display',
@@ -204,7 +209,7 @@
 	
 	        this.menuEl.className = this.isDisplaying ? 'opened' : 'closed';
 	
-	        // this.overlay = overlay;
+	        this.overlay = overlay;
 	    }
 	
 	    _createClass(Menu, [{
@@ -222,17 +227,17 @@
 	            this.menuEl.className = 'opened';
 	            this.isDisplaying = true;
 	            if (this.isDefaultDisplaying) {
-	                // this.overlay.hide();
+	                this.overlay.hide();
 	            } else {
-	                    // this.overlay.display();
-	                }
+	                this.overlay.display();
+	            }
 	        }
 	    }, {
 	        key: 'hide',
 	        value: function hide() {
 	            this.menuEl.className = 'closed';
 	            this.isDisplaying = false;
-	            // this.overlay.hide();
+	            this.overlay.hide();
 	        }
 	    }, {
 	        key: 'setDefaultOpen',
@@ -292,7 +297,7 @@
 	            this.closeEl.onclick = function () {
 	                return _this2.hide();
 	            };
-	            this.overlay.onclick = function () {
+	            this.overlay.onOverlayClick = function () {
 	                return _this2.hide();
 	            };
 	        }
@@ -314,7 +319,7 @@
 	    return Popup;
 	}(HTMLElement);
 	
-	Popup.TEMPLATE = '\n    <div class="popup popup-display">\n        <div class="popup-close"></div>\n        <div class="popup-message"></div>\n    </div>\n    <over-lay></over-lay>\n';
+	Popup.TEMPLATE = '\n    <div class="popup popup-hidden">\n        <div class="popup-close"></div>\n        <div class="popup-message"></div>\n    </div>\n    <over-lay></over-lay>\n';
 	
 	exports.default = Popup;
 

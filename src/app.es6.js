@@ -9,15 +9,15 @@ window.onload = () => {
     document.registerElement('pop-up', Popup);
     document.registerElement('over-lay', Overlay);
 
-    // const menuOverlay = new Overlay(document.querySelector('#menu-overlay'));
-    const menu = new Menu();
-    // const popupOverlay = new Overlay(document.querySelector('#popup-overlay'));
+    const menuOverlay = document.querySelector('#menu-overlay');
+    const menu = new Menu(menuOverlay);
+
     const popup = document.querySelector('pop-up');
-    console.log('popup', popup);
 
-    // menuOverlay.onOverlayClick = () => menu.hide();
-
-    // popupOverlay.onOverlayClick = () => popup.hide();
+    menuOverlay.onOverlayClick = () => {
+        console.log('menu overlay clicked');
+        menu.hide();
+    };
 
     menu.onOptionClick = key => {
         let inputEl = document.querySelector('#name-input');

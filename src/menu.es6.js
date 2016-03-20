@@ -24,7 +24,7 @@ class Menu {
 
         this.menuEl.className = (this.isDisplaying ? 'opened' : 'closed');
 
-        // this.overlay = overlay;
+        this.overlay = overlay;
     }
 
     toggle() {
@@ -39,16 +39,16 @@ class Menu {
         this.menuEl.className = 'opened';
         this.isDisplaying = true;
         if (this.isDefaultDisplaying) {
-            // this.overlay.hide();
+            this.overlay.hide();
         } else {
-            // this.overlay.display();
+            this.overlay.display();
         }
     }
 
     hide() {
         this.menuEl.className = 'closed';
         this.isDisplaying = false;
-        // this.overlay.hide();
+        this.overlay.hide();
     }
 
     setDefaultOpen() {
@@ -60,5 +60,6 @@ class Menu {
     }
 
 }
+
 
 export default Menu

@@ -10,7 +10,7 @@ class Popup extends HTMLElement {
         this.overlay = this.querySelector('over-lay');
 
         this.closeEl.onclick = () => this.hide();
-        this.overlay.onclick = () => this.hide();
+        this.overlay.onOverlayClick = () => this.hide();
     }
 
     display(message) {
@@ -27,7 +27,7 @@ class Popup extends HTMLElement {
 }
 
 Popup.TEMPLATE = `
-    <div class="popup popup-display">
+    <div class="popup popup-hidden">
         <div class="popup-close"></div>
         <div class="popup-message"></div>
     </div>
