@@ -192,22 +192,20 @@ html {
     z-index: 2;
 }
 
-.overlay-display {
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.overlay-display {
     background-color: rgba(4, 0, 0, 0.5);
     display: block;
 }
 
 .overlay-hidden {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background-color: none;
     display: none;
 }

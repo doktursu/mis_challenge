@@ -141,12 +141,12 @@
 	    _createClass(Overlay, [{
 	        key: 'display',
 	        value: function display() {
-	            this.overlayEl.className = 'overlay-display';
+	            this.overlayEl.className = 'overlay overlay-display';
 	        }
 	    }, {
 	        key: 'hide',
 	        value: function hide() {
-	            this.overlayEl.className = 'overlay-hidden';
+	            this.overlayEl.className = 'overlay overlay-hidden';
 	        }
 	    }]);
 	

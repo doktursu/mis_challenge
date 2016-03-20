@@ -8,11 +8,11 @@ class Overlay {
     }
 
     display() {
-        this.overlayEl.className = 'overlay-display';
+        this.overlayEl.className = 'overlay overlay-display';
     }
 
     hide() {
-        this.overlayEl.className = 'overlay-hidden';
+        this.overlayEl.className = 'overlay overlay-hidden';
     }
 
 }
