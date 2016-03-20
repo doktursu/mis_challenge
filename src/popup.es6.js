@@ -1,27 +1,34 @@
 'use strict';
 
-class Popup {
+class Popup extends HTMLElement {
 
-    constructor(overlay) {
-        this.popupEl = document.querySelector('#popup');
-        this.textEl = document.querySelector('#popup-message');
-        this.closeEl = document.querySelector('#popup-close');
+    createdCallback(overlay) {
+        this.className = 'popup popup-display';
+
+        this.innerHTML = Popup.TEMPLATE;
+        this.textEl = this.querySelector('.popup-message');
+        this.closeEl = this.querySelector('.popup-close');
         this.closeEl.onclick = () => this.hide();
 
-        this.overlay = overlay;
+        // this.overlay = overlay;
     }
 
     display(message) {
         this.textEl.innerText = message;
-        this.popupEl.className = 'popup-display';
-        this.overlay.display();
+        this.className = 'popup popup-display';
+        // this.overlay.display();
     }
 
     hide() {
-        this.popupEl.className = 'popup-hidden';
-        this.overlay.hide();
+        this.className = 'popup popup-hidden';
+        // this.overlay.hide();
     }
 
 }
+
+Popup.TEMPLATE = `
+    <div class="popup-close"></div>
+    <div class="popup-message"></div>
+`
 
 export default Popup

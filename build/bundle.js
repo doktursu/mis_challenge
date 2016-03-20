@@ -62,18 +62,19 @@
 	
 	window.onload = function () {
 	
+	    document.registerElement('pop-up', _popupEs2.default);
+	
 	    var menuOverlay = new _overlayEs2.default(document.querySelector('#menu-overlay'));
 	    var menu = new _menuEs2.default(menuOverlay);
-	    var popupOverlay = new _overlayEs2.default(document.querySelector('#popup-overlay'));
-	    var popup = new _popupEs2.default(popupOverlay);
+	    // const popupOverlay = new Overlay(document.querySelector('#popup-overlay'));
+	    var popup = document.querySelector('.popup');
+	    console.log('popup', popup);
 	
 	    menuOverlay.onOverlayClick = function () {
 	        return menu.hide();
 	    };
 	
-	    popupOverlay.onOverlayClick = function () {
-	        return popup.hide();
-	    };
+	    // popupOverlay.onOverlayClick = () => popup.hide();
 	
 	    menu.onOptionClick = function (key) {
 	        var inputEl = document.querySelector('#name-input');
@@ -97,7 +98,7 @@
 	                default:
 	            }
 	        }
-	
+	        console.log('message', message);
 	        popup.display(message);
 	    };
 	
@@ -259,39 +260,54 @@
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
-	var Popup = function () {
-	    function Popup(overlay) {
-	        var _this = this;
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Popup = function (_HTMLElement) {
+	    _inherits(Popup, _HTMLElement);
+	
+	    function Popup() {
 	        _classCallCheck(this, Popup);
 	
-	        this.popupEl = document.querySelector('#popup');
-	        this.textEl = document.querySelector('#popup-message');
-	        this.closeEl = document.querySelector('#popup-close');
-	        this.closeEl.onclick = function () {
-	            return _this.hide();
-	        };
-	
-	        this.overlay = overlay;
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Popup).apply(this, arguments));
 	    }
 	
 	    _createClass(Popup, [{
+	        key: 'createdCallback',
+	        value: function createdCallback(overlay) {
+	            var _this2 = this;
+	
+	            this.className = 'popup popup-display';
+	
+	            this.innerHTML = Popup.TEMPLATE;
+	            this.textEl = this.querySelector('.popup-message');
+	            this.closeEl = this.querySelector('.popup-close');
+	            this.closeEl.onclick = function () {
+	                return _this2.hide();
+	            };
+	
+	            // this.overlay = overlay;
+	        }
+	    }, {
 	        key: 'display',
 	        value: function display(message) {
 	            this.textEl.innerText = message;
-	            this.popupEl.className = 'popup-display';
-	            this.overlay.display();
+	            this.className = 'popup popup-display';
+	            // this.overlay.display();
 	        }
 	    }, {
 	        key: 'hide',
 	        value: function hide() {
-	            this.popupEl.className = 'popup-hidden';
-	            this.overlay.hide();
+	            this.className = 'popup popup-hidden';
+	            // this.overlay.hide();
 	        }
 	    }]);
 	
 	    return Popup;
-	}();
+	}(HTMLElement);
+	
+	Popup.TEMPLATE = '\n    <div class="popup-close"></div>\n    <div class="popup-message"></div>\n';
 	
 	exports.default = Popup;
 

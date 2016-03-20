@@ -6,14 +6,17 @@ import Popup from './popup.es6.js';
 
 window.onload = () => {
 
+    document.registerElement('pop-up', Popup);
+
     const menuOverlay = new Overlay(document.querySelector('#menu-overlay'));
     const menu = new Menu(menuOverlay);
-    const popupOverlay = new Overlay(document.querySelector('#popup-overlay'));
-    const popup = new Popup(popupOverlay);
+    // const popupOverlay = new Overlay(document.querySelector('#popup-overlay'));
+    const popup = document.querySelector('.popup');
+    console.log('popup', popup);
 
     menuOverlay.onOverlayClick = () => menu.hide();
 
-    popupOverlay.onOverlayClick = () => popup.hide();
+    // popupOverlay.onOverlayClick = () => popup.hide();
 
     menu.onOptionClick = key => {
         let inputEl = document.querySelector('#name-input');
@@ -37,7 +40,7 @@ window.onload = () => {
                 default:
             }
         }
-
+        console.log('message', message);
         popup.display(message);
 
     };

@@ -137,7 +137,7 @@ html {
 /* Popup
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-#popup {
+.popup {
     width: 300px;
     height: 150px;
     background-color: white;
@@ -154,7 +154,7 @@ html {
     box-shadow: 2px 2px 5px rgba(8, 0, 0, 0.5);
 }
 
-#popup-message {
+.popup-message {
     font-size: 1.4rem;
     color: #303a1f;
     display: table-cell; 
@@ -162,7 +162,7 @@ html {
     text-align: center;
 }
 
-#popup-close {
+.popup-close {
     width: 24px;
     height: 24px;
     position: absolute;
