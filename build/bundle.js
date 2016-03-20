@@ -77,7 +77,7 @@
 	
 	    menu.onOptionClick = function (key) {
 	        var inputEl = document.querySelector('#name-input');
-	        var name = inputEl.value;
+	        var name = inputEl.value.trim();
 	        var message = "Please enter a name first";
 	
 	        if (name) {
