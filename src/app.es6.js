@@ -7,14 +7,15 @@ import Popup from './popup.es6.js';
 window.onload = () => {
 
     document.registerElement('pop-up', Popup);
+    document.registerElement('over-lay', Overlay);
 
-    const menuOverlay = new Overlay(document.querySelector('#menu-overlay'));
-    const menu = new Menu(menuOverlay);
+    // const menuOverlay = new Overlay(document.querySelector('#menu-overlay'));
+    const menu = new Menu();
     // const popupOverlay = new Overlay(document.querySelector('#popup-overlay'));
-    const popup = document.querySelector('.popup');
+    const popup = document.querySelector('pop-up');
     console.log('popup', popup);
 
-    menuOverlay.onOverlayClick = () => menu.hide();
+    // menuOverlay.onOverlayClick = () => menu.hide();
 
     // popupOverlay.onOverlayClick = () => popup.hide();
 

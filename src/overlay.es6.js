@@ -1,18 +1,17 @@
 'use strict';
 
-class Overlay {
+class Overlay extends HTMLElement{
 
-    constructor(element) {
-        this.overlayEl = element;
-        this.overlayEl.onclick = () => this.onOverlayClick();
+    createdCallback() {
+        this.className = 'overlay overlay-display';
     }
 
     display() {
-        this.overlayEl.className = 'overlay overlay-display';
+        this.className = 'overlay overlay-display';
     }
 
     hide() {
-        this.overlayEl.className = 'overlay overlay-hidden';
+        this.className = 'overlay overlay-hidden';
     }
 
 }

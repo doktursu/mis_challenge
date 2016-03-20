@@ -63,16 +63,15 @@
 	window.onload = function () {
 	
 	    document.registerElement('pop-up', _popupEs2.default);
+	    document.registerElement('over-lay', _overlayEs2.default);
 	
-	    var menuOverlay = new _overlayEs2.default(document.querySelector('#menu-overlay'));
-	    var menu = new _menuEs2.default(menuOverlay);
+	    // const menuOverlay = new Overlay(document.querySelector('#menu-overlay'));
+	    var menu = new _menuEs2.default();
 	    // const popupOverlay = new Overlay(document.querySelector('#popup-overlay'));
-	    var popup = document.querySelector('.popup');
+	    var popup = document.querySelector('pop-up');
 	    console.log('popup', popup);
 	
-	    menuOverlay.onOverlayClick = function () {
-	        return menu.hide();
-	    };
+	    // menuOverlay.onOverlayClick = () => menu.hide();
 	
 	    // popupOverlay.onOverlayClick = () => popup.hide();
 	
@@ -127,32 +126,38 @@
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
-	var Overlay = function () {
-	    function Overlay(element) {
-	        var _this = this;
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Overlay = function (_HTMLElement) {
+	    _inherits(Overlay, _HTMLElement);
+	
+	    function Overlay() {
 	        _classCallCheck(this, Overlay);
 	
-	        this.overlayEl = element;
-	        this.overlayEl.onclick = function () {
-	            return _this.onOverlayClick();
-	        };
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Overlay).apply(this, arguments));
 	    }
 	
 	    _createClass(Overlay, [{
+	        key: 'createdCallback',
+	        value: function createdCallback() {
+	            this.className = 'overlay overlay-display';
+	        }
+	    }, {
 	        key: 'display',
 	        value: function display() {
-	            this.overlayEl.className = 'overlay overlay-display';
+	            this.className = 'overlay overlay-display';
 	        }
 	    }, {
 	        key: 'hide',
 	        value: function hide() {
-	            this.overlayEl.className = 'overlay overlay-hidden';
+	            this.className = 'overlay overlay-hidden';
 	        }
 	    }]);
 	
 	    return Overlay;
-	}();
+	}(HTMLElement);
 	
 	exports.default = Overlay;
 
@@ -199,7 +204,7 @@
 	
 	        this.menuEl.className = this.isDisplaying ? 'opened' : 'closed';
 	
-	        this.overlay = overlay;
+	        // this.overlay = overlay;
 	    }
 	
 	    _createClass(Menu, [{
@@ -217,17 +222,17 @@
 	            this.menuEl.className = 'opened';
 	            this.isDisplaying = true;
 	            if (this.isDefaultDisplaying) {
-	                this.overlay.hide();
+	                // this.overlay.hide();
 	            } else {
-	                this.overlay.display();
-	            }
+	                    // this.overlay.display();
+	                }
 	        }
 	    }, {
 	        key: 'hide',
 	        value: function hide() {
 	            this.menuEl.className = 'closed';
 	            this.isDisplaying = false;
-	            this.overlay.hide();
+	            // this.overlay.hide();
 	        }
 	    }, {
 	        key: 'setDefaultOpen',
@@ -278,36 +283,38 @@
 	        value: function createdCallback(overlay) {
 	            var _this2 = this;
 	
-	            this.className = 'popup popup-display';
-	
 	            this.innerHTML = Popup.TEMPLATE;
+	            this.popupEl = this.querySelector('.popup');
 	            this.textEl = this.querySelector('.popup-message');
 	            this.closeEl = this.querySelector('.popup-close');
+	            this.overlay = this.querySelector('over-lay');
+	
 	            this.closeEl.onclick = function () {
 	                return _this2.hide();
 	            };
-	
-	            // this.overlay = overlay;
+	            this.overlay.onclick = function () {
+	                return _this2.hide();
+	            };
 	        }
 	    }, {
 	        key: 'display',
 	        value: function display(message) {
 	            this.textEl.innerText = message;
-	            this.className = 'popup popup-display';
-	            // this.overlay.display();
+	            this.popupEl.className = 'popup popup-display';
+	            this.overlay.display();
 	        }
 	    }, {
 	        key: 'hide',
 	        value: function hide() {
-	            this.className = 'popup popup-hidden';
-	            // this.overlay.hide();
+	            this.popupEl.className = 'popup popup-hidden';
+	            this.overlay.hide();
 	        }
 	    }]);
 	
 	    return Popup;
 	}(HTMLElement);
 	
-	Popup.TEMPLATE = '\n    <div class="popup-close"></div>\n    <div class="popup-message"></div>\n';
+	Popup.TEMPLATE = '\n    <div class="popup popup-display">\n        <div class="popup-close"></div>\n        <div class="popup-message"></div>\n    </div>\n    <over-lay></over-lay>\n';
 	
 	exports.default = Popup;
 
